@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/MMMAppUpdater.svg?style=flat)](http://cocoapods.org/pods/MMMAppUpdater)
 [![Platform](https://img.shields.io/cocoapods/p/MMMAppUpdater.svg?style=flat)](http://cocoapods.org/pods/MMMAppUpdater)
 
+Simple class to check new version of app. You can simply check for new version of the app and open Appstore to let user to update.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
