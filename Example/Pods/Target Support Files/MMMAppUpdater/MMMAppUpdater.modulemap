@@ -1,0 +1,6 @@
+framework module MMMAppUpdater {
+  umbrella header "MMMAppUpdater-umbrella.h"
+
+  export *
+  module * { export * }
+}

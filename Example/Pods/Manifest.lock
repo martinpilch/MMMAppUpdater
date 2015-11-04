@@ -1,0 +1,14 @@
+PODS:
+  - MMMAppUpdater (0.1.0)
+
+DEPENDENCIES:
+  - MMMAppUpdater (from `../`)
+
+EXTERNAL SOURCES:
+  MMMAppUpdater:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MMMAppUpdater: 59bd06408774bb643a9681f61dca07def35aac8b
+
+COCOAPODS: 0.38.2

@@ -1,0 +1,25 @@
+{
+  "name": "MMMAppUpdater",
+  "version": "0.1.0",
+  "summary": "A short description of MMMAppUpdater.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/MMMAppUpdater",
+  "license": "MIT",
+  "authors": {
+    "Martin Pilch": "martin.pilch@ztory.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/MMMAppUpdater.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "MMMAppUpdater": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
