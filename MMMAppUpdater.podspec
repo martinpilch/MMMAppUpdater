@@ -1,38 +1,18 @@
-#
-# Be sure to run `pod lib lint MMMAppUpdater.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "MMMAppUpdater"
   s.version          = "0.1.0"
-  s.summary          = "Simple class to check new version of app."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.summary          = "Simple pod to check new version of application in Appstore"
   s.description      = "Simple class to check new version of app. You can simply check for new version of the app and open Appstore to let user to update."
   s.homepage         = "https://github.com/martinpilch/MMMAppUpdater"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Martin Pilch" => "martin.pilch@email.cz" }
   s.source           = { :git => "https://github.com/martinpilch/MMMAppUpdater.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/martin_pilch'
-
+  s.social_media_url = 'https://twitter.com/martin_pilch'
   s.platform     = :ios, '8.4'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
     'MMMAppUpdater' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
