@@ -87,7 +87,24 @@ NSString * const kItunesURLKey = @"com.followio.followio.itunes.url";
     
     NSArray *results = info[@"results"];
     NSDictionary *result = (results.count > 0) ? results[0] : nil;
-    BOOL newVersionAvailable = [self compareCurrentVersionWithVersion:result[@"version"]];
+    if (!result) {
+        if (completion) {
+            completion(NO, nil);
+        }
+        return;
+    }
+
+    NSString *minimumOSVersion = result[@"minimumOsVersion"];
+    NSString *currentOSVersion = [NSProcessInfo processInfo].operatingSystemVersionString;
+    if ([currentOSVersion compare:minimumOSVersion options:NSNumericSearch] == NSOrderedAscending) {
+        if (completion) {
+            completion(NO, nil);
+        }
+        return;
+    }
+    
+    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    BOOL newVersionAvailable = ([currentVersion compare:result[@"version"] options:NSNumericSearch] == NSOrderedAscending);
     
     NSString *appItunesPath = [result[@"trackViewUrl"] stringByReplacingOccurrencesOfString:@"&uo=4" withString:@""];
     NSURL *appItunesUrl = [NSURL URLWithString:appItunesPath];
@@ -96,19 +113,6 @@ NSString * const kItunesURLKey = @"com.followio.followio.itunes.url";
     if ( completion ) {
         completion(newVersionAvailable, appItunesUrl);
     }
-}
-
-- (BOOL)compareCurrentVersionWithVersion:(NSString *)latestVersion
-{
-    if ( !latestVersion ) {
-        return NO;
-    }
-    
-    NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
-    NSString *currentVersion = infoDictionary[@"CFBundleShortVersionString"];
-    
-    BOOL newVersionAvailable = ![latestVersion isEqualToString:currentVersion];
-    return newVersionAvailable;
 }
 
 @end
